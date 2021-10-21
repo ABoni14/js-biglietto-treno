@@ -31,9 +31,6 @@ if(ageUser > 0 || numPlayer <= 100){
   errorMsg = 'Inserire un numero compreso fra 1 e 100';
 }
 
-console.log('giocoValido',giocoValido)
-console.log('errorMsg',errorMsg)
-
 
 if(ageUser >= 65){
   finalPrice = ticketCost * 60 / 100;
