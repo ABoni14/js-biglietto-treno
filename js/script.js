@@ -8,16 +8,15 @@
 
 const kmTrip = parseInt(prompt ("Quanti chilometri vuoi percorrere?"));
 const ageUser = parseInt(prompt ("Quanti anni hai?"));
-let ticketCost = kmTrip * 0.21;
-const scontoOver65 = ticketCost * 60 / 100;
-const scontoUnder18 = ticketCost * 80 / 100;
+const ticketCost = kmTrip * 0.21;
+let finalPrice;
 
 if(ageUser >= 65){
- console.log(scontoOver65);
+  finalPrice = ticketCost * 60 / 100;
 }else if(ageUser <= 18){
-  console.log(scontoUnder18)
+  finalPrice = ticketCost * 80 / 100;
 }else{
-  console.log("Non hai diritto a nesusno sconto");
+  finalPrice = ticketCost;
 }
 
 document.getElementById("output").innerHTML =
@@ -25,6 +24,7 @@ document.getElementById("output").innerHTML =
   Chilometri indicati: ${kmTrip} <br>
   Costo biglietto : ${kmTrip} * 0.21 (a kilometro) = ${ticketCost} <br>
   Età inserità: ${ageUser} <br>
+  Prezzo biglietto finale: ${finalPrice}
 `;
 
 console.log(ticketCost);
