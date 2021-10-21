@@ -12,7 +12,7 @@ const ticketCost = kmTrip * 0.21;
 let finalPrice;
 
 let trip= true;
-let errorMsg = ''
+let errorMsg = '';
 
 //controllo la validità dei dati inseriti
 if(kmTrip < 0){
@@ -26,11 +26,15 @@ if(isNaN(kmTrip)){
 }
 
 // controllo se l'età è valida
-if(ageUser > 0 || numPlayer <= 100){
+if(ageUser > 0 || ageUser <= 100){
   trip = false;
   errorMsg = 'Inserire un numero compreso fra 1 e 100';
 }
 
+if(isNaN(ageUser)){
+  trip = false;
+  errorMsg = 'Inserire solo numeri';
+}
 
 if(ageUser >= 65){
   finalPrice = ticketCost * 60 / 100;
