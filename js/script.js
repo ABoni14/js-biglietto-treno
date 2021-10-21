@@ -12,8 +12,6 @@ let ticketCost = kmTrip * 0.21;
 const scontoOver65 = ticketCost * 60 / 100;
 const scontoUnder18 = ticketCost * 80 / 100;
 
-console.log(ticketCost);
-
 if(ageUser >= 65){
  console.log(scontoOver65);
 }else if(ageUser <= 18){
@@ -22,9 +20,14 @@ if(ageUser >= 65){
   console.log("Non hai diritto a nesusno sconto");
 }
 
+document.getElementById("output").innerHTML =
+`
+  Chilometri indicati: ${kmTrip} <br>
+  Costo biglietto : ${kmTrip} * 0.21 (a kilometro) = ${ticketCost} <br>
+  Età inserità: ${ageUser} <br>
+`;
 
-
-
+console.log(ticketCost);
 
 
 
