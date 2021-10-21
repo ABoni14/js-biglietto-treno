@@ -11,6 +11,30 @@ const ageUser = parseInt(prompt ("Quanti anni hai?"));
 const ticketCost = kmTrip * 0.21;
 let finalPrice;
 
+let trip= true;
+let errorMsg = ''
+
+//controllo la validità dei dati inseriti
+if(kmTrip < 0){
+  trip = false;
+  errorMsg = 'Inserire un numero superiore a 0';
+}
+
+if(isNaN(kmTrip)){
+  trip = false;
+  errorMsg = 'Inserire solo numeri';
+}
+
+// controllo se l'età è valida
+if(ageUser > 0 || numPlayer <= 100){
+  trip = false;
+  errorMsg = 'Inserire un numero compreso fra 1 e 100';
+}
+
+console.log('giocoValido',giocoValido)
+console.log('errorMsg',errorMsg)
+
+
 if(ageUser >= 65){
   finalPrice = ticketCost * 60 / 100;
 }else if(ageUser <= 18){
@@ -24,7 +48,7 @@ document.getElementById("output").innerHTML =
   Chilometri indicati: ${kmTrip} <br>
   Costo biglietto : ${kmTrip} * 0.21 (a kilometro) = ${ticketCost} <br>
   Età inserità: ${ageUser} <br>
-  Prezzo biglietto finale: ${finalPrice}
+  Prezzo biglietto finale: ${finalPrice.toFixed(2)}
 `;
 
 console.log(ticketCost);
